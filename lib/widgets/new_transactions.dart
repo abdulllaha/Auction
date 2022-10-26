@@ -10,9 +10,9 @@ class NewTrtansactions extends StatefulWidget {
 
 class _NewTrtansactionsState extends State<NewTrtansactions> {
   final titleController = TextEditingController();
-
   final amountController = TextEditingController();
-
+  final String titleLable = 'Title';
+  final String amountLable = 'Amount';
   void submitData() {
     final enteredTitle = titleController.text;
     final enterdAmount = double.parse(amountController.text);
@@ -36,13 +36,13 @@ class _NewTrtansactionsState extends State<NewTrtansactions> {
           crossAxisAlignment: CrossAxisAlignment.end,
           children: <Widget>[
             TextField(
-              decoration: InputDecoration(labelText: 'Title'),
+              decoration: InputDecoration(labelText: titleLable),
               // onChanged: (val) => titleInput = val,
               controller: titleController,
               onSubmitted: (_) => submitData(),
             ),
             TextField(
-              decoration: InputDecoration(labelText: 'Amount'),
+              decoration: InputDecoration(labelText: amountLable),
               // onChanged: (val) => amountString = val,
               controller: amountController,
               keyboardType: TextInputType.number,
